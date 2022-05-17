@@ -51,7 +51,7 @@ namespace Desafio.ME.Dominio.Testes
             var item = ConstroiPedidoBase();
 
             var result = Assert.Throws<ArgumentException>(() => item.DefinirPrecoUnitario(-10m));
-            Assert.Equal("Preco unitário não pode ser menor que 0.", result.Message);
+            Assert.Equal("Preço unitário não pode ser menor que 0.", result.Message);
         }
     }
 }

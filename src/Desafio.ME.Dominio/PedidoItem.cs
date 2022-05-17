@@ -31,7 +31,7 @@
         public void DefinirPrecoUnitario(decimal preco)
         {
             if (preco < 0)
-                throw new ArgumentException("Preco unitário não pode ser menor que 0.");
+                throw new ArgumentException("Preço unitário não pode ser menor que 0.");
 
             PrecoUnitario = preco;
         }
