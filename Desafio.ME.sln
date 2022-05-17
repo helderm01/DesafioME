@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.API", "src\Desaf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{8A02ED2B-1371-4261-A377-AEA18A5B664B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.Dominio.Testes", "src\Desafio.ME.Dominio.Testes\Desafio.ME.Dominio.Testes.csproj", "{1B6FF4E8-8F4A-4075-9229-D74035C228AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.Dominio.Testes", "src\Desafio.ME.Dominio.Testes\Desafio.ME.Dominio.Testes.csproj", "{1B6FF4E8-8F4A-4075-9229-D74035C228AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.Handlers", "src\Desafio.ME.Handlers\Desafio.ME.Handlers.csproj", "{B2E424BF-032B-4C76-A213-C0024B018501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.Database", "src\Desafio.ME.Database\Desafio.ME.Database.csproj", "{93DB5112-F71E-4BCD-A962-F4B463488654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.DTOs", "src\Desafio.ME.DTOs\Desafio.ME.DTOs.csproj", "{79936145-7C5B-44B4-88EB-946F7B3B14DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +35,18 @@ Global
 		{1B6FF4E8-8F4A-4075-9229-D74035C228AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B6FF4E8-8F4A-4075-9229-D74035C228AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B6FF4E8-8F4A-4075-9229-D74035C228AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E424BF-032B-4C76-A213-C0024B018501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E424BF-032B-4C76-A213-C0024B018501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E424BF-032B-4C76-A213-C0024B018501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E424BF-032B-4C76-A213-C0024B018501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93DB5112-F71E-4BCD-A962-F4B463488654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93DB5112-F71E-4BCD-A962-F4B463488654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93DB5112-F71E-4BCD-A962-F4B463488654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93DB5112-F71E-4BCD-A962-F4B463488654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79936145-7C5B-44B4-88EB-946F7B3B14DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79936145-7C5B-44B4-88EB-946F7B3B14DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79936145-7C5B-44B4-88EB-946F7B3B14DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79936145-7C5B-44B4-88EB-946F7B3B14DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

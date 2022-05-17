@@ -16,7 +16,6 @@
         public uint Quantidade { get; private set; }
         public decimal ValorTotal => PrecoUnitario * Quantidade;
 
-
         public void DefinirDescricao(string descricao)
         {
             if (string.IsNullOrWhiteSpace(descricao))
@@ -27,7 +26,15 @@
 
             Descricao = descricao;
         }
-        public void DefinirQuantidade(uint qtd) => Quantidade = qtd;
+        
+        public void DefinirQuantidade(uint qtd)
+        {
+            if (qtd == 0)
+                throw new ArgumentException("Quantidade deve ser maior que 0.");
+
+            Quantidade = qtd;
+        }
+
         public void DefinirPrecoUnitario(decimal preco)
         {
             if (preco < 0)

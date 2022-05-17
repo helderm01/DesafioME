@@ -6,13 +6,13 @@ namespace Desafio.ME.Dominio
     {
         const uint TAMANHO_NUMERO = 15;
 
-        public Pedido()
+        public Pedido(string numero)
         {
-            ItensDoPedido = new List<PedidoItem>();
+            AtribuirNumeroPedido(numero);
         }
 
         public string NumeroPedido { get; private set; }
-        public ICollection<PedidoItem> ItensDoPedido { get; private set; }
+        public IList<PedidoItem> ItensDoPedido { get; private set; } = new List<PedidoItem>();
         public long QuantidadeTotal => ItensDoPedido.Sum(item => item.Quantidade);
         public decimal ValorTotal => ItensDoPedido.Sum(item => item.ValorTotal);
 
@@ -30,12 +30,9 @@ namespace Desafio.ME.Dominio
         {
             ItensDoPedido.Add(new PedidoItem(descricao, quantidade, preco));
         }
-        public PedidoAprovacao AprovarPedido(PedidoStatus status, uint itensAprovados, decimal valorAprovado)
+        public PedidoAprovacao AprovarPedido(uint itensAprovados, decimal valorAprovado)
         {
-            if (status != PedidoStatus.APROVADO)
-                throw new ArgumentException("Para aprovar o pedido o Status deve ser APROVADO.");
-
-            ICollection<PedidoStatus> statusAprovacao = new List<PedidoStatus>();
+            IList<PedidoStatus> statusAprovacao = new List<PedidoStatus>();
 
             if (itensAprovados > QuantidadeTotal)
                 statusAprovacao.Add(PedidoStatus.APROVADO_QTD_A_MAIOR);
@@ -54,13 +51,9 @@ namespace Desafio.ME.Dominio
 
             return new PedidoAprovacao(this, statusAprovacao, itensAprovados, valorAprovado);
         }
-
-        public PedidoAprovacao ReprovarPedido(PedidoStatus status)
+        public PedidoAprovacao ReprovarPedido()
         {
-            if (status != PedidoStatus.REPROVADO)
-                throw new ArgumentException("Para reprovar o pedido o Status deve ser REPROVADO.");
-
-            ICollection<PedidoStatus> statusAprovacao = new List<PedidoStatus>();
+            IList<PedidoStatus> statusAprovacao = new List<PedidoStatus>();
             statusAprovacao.Add(PedidoStatus.REPROVADO);
 
             return new PedidoAprovacao(this, statusAprovacao, 0, 0);

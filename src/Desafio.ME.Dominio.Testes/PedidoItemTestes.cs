@@ -1,15 +1,11 @@
-using System;
+Ôªøusing System;
 using Xunit;
 
 namespace Desafio.ME.Dominio.Testes
 {
     public class PedidoItemTestes
     {
-        private PedidoItem ConstroiPedidoBase()
-        {
-            return new PedidoItem("Item A", 1, 5);
-        }
-
+        private PedidoItem CriarItemEmEstadoValido() => new PedidoItem("Item A", 1, 5);
 
         [Theory]
         [InlineData("Item A", 1, 10, 10)]
@@ -19,6 +15,7 @@ namespace Desafio.ME.Dominio.Testes
         {
             var pedidoItem = new PedidoItem(descricao, qtde, preco);
 
+            Assert.NotNull(pedidoItem);
             Assert.Equal(descricao, pedidoItem.Descricao);
             Assert.Equal(qtde, pedidoItem.Quantidade);
             Assert.Equal(preco, pedidoItem.PrecoUnitario);
@@ -28,30 +25,42 @@ namespace Desafio.ME.Dominio.Testes
         [Fact]
         public void Nao_Deve_Atribuir_Vazio_Na_Descricao()
         {
-            var item = ConstroiPedidoBase();
+            var item = CriarItemEmEstadoValido();
 
             var result = Assert.Throws<ArgumentException>(() => item.DefinirDescricao(string.Empty));
-            Assert.Equal("DescriÁ„o È obrigatÛria.", result.Message);
-
+            Assert.IsType<ArgumentException>(result);
+            Assert.Equal("Descri√ß√£o √© obrigat√≥ria.", result.Message);
         }
 
         [Fact]
         public void Nao_Deve_Atribuir_Descricao_Muito_Grande()
         {
-            var item = ConstroiPedidoBase();
+            var item = CriarItemEmEstadoValido();
 
             string novaDescricao = "012345678901234567890123456789012345678901234567891";
             var result = Assert.Throws<ArgumentException>(() => item.DefinirDescricao(novaDescricao));
-            Assert.Equal("DescriÁ„o deve conter no m·ximo 50 caracteres.", result.Message);
+            Assert.IsType<ArgumentException>(result);
+            Assert.Equal("Descri√ß√£o deve conter no m√°ximo 50 caracteres.", result.Message);
         }
 
         [Fact]
         public void Nao_Deve_Atribuir_Valor_Negativo()
         {
-            var item = ConstroiPedidoBase();
+            var item = CriarItemEmEstadoValido();
 
             var result = Assert.Throws<ArgumentException>(() => item.DefinirPrecoUnitario(-10m));
-            Assert.Equal("PreÁo unit·rio n„o pode ser menor que 0.", result.Message);
+            Assert.IsType<ArgumentException>(result);
+            Assert.Equal("Pre√ßo unit√°rio n√£o pode ser menor que 0.", result.Message);
+        }
+
+        [Fact]
+        public void Nao_Deve_Atribuir_Quantidade_Zero()
+        {
+            var item = CriarItemEmEstadoValido();
+
+            var result = Assert.Throws<ArgumentException>(() => item.DefinirQuantidade(0));
+            Assert.IsType<ArgumentException>(result);
+            Assert.Equal("Quantidade deve ser maior que 0.", result.Message);
         }
     }
 }

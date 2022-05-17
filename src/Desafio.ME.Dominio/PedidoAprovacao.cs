@@ -4,8 +4,7 @@ namespace Desafio.ME.Dominio
 {
     public class PedidoAprovacao
     {
-
-        public PedidoAprovacao(Pedido pedido, ICollection<PedidoStatus> status, uint qtdItens, decimal valor)
+        public PedidoAprovacao(Pedido pedido, IList<PedidoStatus> status, uint qtdItens, decimal valor)
         {
             AtribuirStatus(status);
             AtribuirItensAprovados(qtdItens);
@@ -13,13 +12,12 @@ namespace Desafio.ME.Dominio
             AtribuirValorAprovado(valor);
         }
 
-        public ICollection<PedidoStatus> Status { get; private set; }
+        public IList<PedidoStatus> Status { get; private set; } = new List<PedidoStatus>();
         public uint ItensAprovados { get; private set; }
         public decimal ValorAprovado { get; private set; }
         public Pedido Pedido { get; private set; }
 
-
-        public void AtribuirStatus(ICollection<PedidoStatus> status) => Status = status;
+        public void AtribuirStatus(IList<PedidoStatus> status) => Status = status;
         public void AtribuirPedido(Pedido pedido) => Pedido = pedido;
         public void AtribuirItensAprovados(uint itensAprovados)
         {
