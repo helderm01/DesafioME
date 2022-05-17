@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.Dominio", "src\Desafio.ME.Dominio\Desafio.ME.Dominio.csproj", "{C1D7213B-0C6C-498B-80AA-F4D5D8A371B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.API", "src\Desafio.ME.API\Desafio.ME.API.csproj", "{7A7811F8-49D0-4356-B9AA-6FE502928B29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1D7213B-0C6C-498B-80AA-F4D5D8A371B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D7213B-0C6C-498B-80AA-F4D5D8A371B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D7213B-0C6C-498B-80AA-F4D5D8A371B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D7213B-0C6C-498B-80AA-F4D5D8A371B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A7811F8-49D0-4356-B9AA-6FE502928B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A7811F8-49D0-4356-B9AA-6FE502928B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A7811F8-49D0-4356-B9AA-6FE502928B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A7811F8-49D0-4356-B9AA-6FE502928B29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F866BC7F-128B-4699-9DA2-088E01663D52}
+	EndGlobalSection
+EndGlobal
