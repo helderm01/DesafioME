@@ -1,0 +1,31 @@
+version: '3'
+
+networks:
+  cd_net:
+    driver: bridge
+    name: cd_net
+
+services:
+  cd_sql:
+    build:
+      context: .
+      dockerfile: MSSQLServer.Dockerfile
+    container_name: cd_sql
+    hostname: cd_sql_server
+    networks:
+    - cd_net
+    ports:
+    - 1433:1433
+  
+  cd_api:
+    build:
+      context: .
+      dockerfile: Desafio.ME.API.Dockerfile
+    container_name: cd_api
+    hostname: cd_api_server
+    networks:
+    - cd_net
+    ports:
+    - 5001:80
+    depends_on:
+    - cd_sql

@@ -3,19 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.Dominio", "src\Desafio.ME.Dominio\Desafio.ME.Dominio.csproj", "{C1D7213B-0C6C-498B-80AA-F4D5D8A371B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.Dominio", "Desafio.ME.Dominio\Desafio.ME.Dominio.csproj", "{C1D7213B-0C6C-498B-80AA-F4D5D8A371B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.API", "src\Desafio.ME.API\Desafio.ME.API.csproj", "{7A7811F8-49D0-4356-B9AA-6FE502928B29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.API", "Desafio.ME.API\Desafio.ME.API.csproj", "{7A7811F8-49D0-4356-B9AA-6FE502928B29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{8A02ED2B-1371-4261-A377-AEA18A5B664B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.Dominio.Testes", "src\Desafio.ME.Dominio.Testes\Desafio.ME.Dominio.Testes.csproj", "{1B6FF4E8-8F4A-4075-9229-D74035C228AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.Dominio.Testes", "Desafio.ME.Dominio.Testes\Desafio.ME.Dominio.Testes.csproj", "{1B6FF4E8-8F4A-4075-9229-D74035C228AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.Handlers", "src\Desafio.ME.Handlers\Desafio.ME.Handlers.csproj", "{B2E424BF-032B-4C76-A213-C0024B018501}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.Handlers", "Desafio.ME.Handlers\Desafio.ME.Handlers.csproj", "{B2E424BF-032B-4C76-A213-C0024B018501}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.Database", "src\Desafio.ME.Database\Desafio.ME.Database.csproj", "{93DB5112-F71E-4BCD-A962-F4B463488654}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.Database", "Desafio.ME.Database\Desafio.ME.Database.csproj", "{93DB5112-F71E-4BCD-A962-F4B463488654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.DTOs", "src\Desafio.ME.DTOs\Desafio.ME.DTOs.csproj", "{79936145-7C5B-44B4-88EB-946F7B3B14DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.DTOs", "Desafio.ME.DTOs\Desafio.ME.DTOs.csproj", "{79936145-7C5B-44B4-88EB-946F7B3B14DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{BACBEA5F-E65F-4F4D-9E62-19F4D0179B5C}"
+	ProjectSection(SolutionItems) = preProject
+		Desafio.ME.API.Dockerfile = Desafio.ME.API.Dockerfile
+		docker-compose.yml = docker-compose.yml
+		MSSQLServer.Dockerfile = MSSQLServer.Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
