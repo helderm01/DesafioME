@@ -4,6 +4,8 @@
     {
         const uint TAMANHO_DESCRICAO = 50;
 
+        protected PedidoItem() { }
+
         public PedidoItem(string descricao, uint qtde, decimal preco)
         {
             DefinirDescricao(descricao);
@@ -15,7 +17,7 @@
         public decimal PrecoUnitario { get; private set; }
         public uint Quantidade { get; private set; }
         public decimal ValorTotal => PrecoUnitario * Quantidade;
-
+        
         public void DefinirDescricao(string descricao)
         {
             if (string.IsNullOrWhiteSpace(descricao))

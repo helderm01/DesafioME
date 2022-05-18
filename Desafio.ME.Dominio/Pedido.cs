@@ -6,6 +6,8 @@ namespace Desafio.ME.Dominio
     {
         const uint TAMANHO_NUMERO = 15;
 
+        protected Pedido() { }
+
         public Pedido(string numero)
         {
             AtribuirNumeroPedido(numero);

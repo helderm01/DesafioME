@@ -10,5 +10,8 @@ namespace Desafio.ME.Database.Repositorios
             : base(context)
         {
         }
+
+        public Pedido ObterPorNumero(string numero)
+            => Context.Pedidos.SingleOrDefault(c => c.NumeroPedido == numero);
     }
 }

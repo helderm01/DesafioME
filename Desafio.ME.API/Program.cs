@@ -1,23 +1,40 @@
 using Desafio.ME.Database.Context;
+using Desafio.ME.Database.Interfaces;
+using Desafio.ME.Database.Repositorios;
+using Desafio.ME.Handlers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-//builder.Services.AddDbContext<MEContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MercadoEletronico")));
+builder.Services.AddDbContext<MEContext>(c => c.UseInMemoryDatabase(databaseName: "ME"));
+
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c=>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api Pedidos", Description = "Api de Pedidos", Version = "v1" });
+});
+
+builder.Services.AddTransient<IPedidoRepositorio, PedidoRepositorio>();
+builder.Services.AddTransient<CriarPedidoHandler>();
+builder.Services.AddTransient<ExcluirPedidoHandler>();
+builder.Services.AddTransient<ObterPedidoHandler>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Pedidos v1");
+});
 
 app.UseHttpsRedirection();
 

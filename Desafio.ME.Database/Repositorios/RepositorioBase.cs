@@ -55,5 +55,11 @@ namespace Desafio.ME.Database.Repositorios
             Context.Set<T>().UpdateRange(entidades);
             Context.SaveChanges();
         }
+
+        public void Delete(T entidade)
+        {
+            Context.Set<T>().Remove(entidade);
+            Context.SaveChanges();
+        }
     }
 }

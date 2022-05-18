@@ -10,5 +10,6 @@ namespace Desafio.ME.Database.Interfaces
         void Post(T entidade);
         void Update(T entidade);
         void Update(params T[] entidades);
+        void Delete(T entidade);
     }
 }

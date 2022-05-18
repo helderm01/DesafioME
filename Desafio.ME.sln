@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{8A02ED
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.Dominio.Testes", "Desafio.ME.Dominio.Testes\Desafio.ME.Dominio.Testes.csproj", "{1B6FF4E8-8F4A-4075-9229-D74035C228AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.Handlers", "Desafio.ME.Handlers\Desafio.ME.Handlers.csproj", "{B2E424BF-032B-4C76-A213-C0024B018501}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.Handlers", "Desafio.ME.Handlers\Desafio.ME.Handlers.csproj", "{B2E424BF-032B-4C76-A213-C0024B018501}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.Database", "Desafio.ME.Database\Desafio.ME.Database.csproj", "{93DB5112-F71E-4BCD-A962-F4B463488654}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.Database", "Desafio.ME.Database\Desafio.ME.Database.csproj", "{93DB5112-F71E-4BCD-A962-F4B463488654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.ME.DTOs", "Desafio.ME.DTOs\Desafio.ME.DTOs.csproj", "{79936145-7C5B-44B4-88EB-946F7B3B14DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.ME.DTOs", "Desafio.ME.DTOs\Desafio.ME.DTOs.csproj", "{79936145-7C5B-44B4-88EB-946F7B3B14DF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{BACBEA5F-E65F-4F4D-9E62-19F4D0179B5C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{2E8D97BE-E55B-4F0F-A155-9F0B89F3ADF8}"
 	ProjectSection(SolutionItems) = preProject
 		Desafio.ME.API.Dockerfile = Desafio.ME.API.Dockerfile
 		docker-compose.yml = docker-compose.yml
