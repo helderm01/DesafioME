@@ -1,4 +1,6 @@
-﻿using Desafio.ME.DTOs;
+﻿using Desafio.ME.API.Dtos;
+using Desafio.ME.DTOs;
+using Desafio.ME.Handlers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Desafio.ME.API.Controllers
@@ -7,14 +9,29 @@ namespace Desafio.ME.API.Controllers
     [ApiController]
     public class StatusController : ControllerBase
     {
-        public StatusController()
-        {
+        private readonly AlterarStatusHandler _alterarStatusHandler;
 
+        public StatusController(AlterarStatusHandler alterarStatusHandler)
+        {
+            _alterarStatusHandler = alterarStatusHandler;
         }
 
+        [HttpPost]
         public IActionResult AlterarStatus(AlterarStatusDto alterarStatus)
         {
-            return Ok();
+            if (!ModelState.IsValid)
+                return BadRequest(ErroDto.Para(ModelState));
+
+            try
+            {
+                var retorno = _alterarStatusHandler.Handle(alterarStatus);
+
+                return Ok(retorno);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ErroDto.Para(ex));
+            }
         }
     }
 }

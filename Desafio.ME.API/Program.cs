@@ -22,6 +22,7 @@ builder.Services.AddTransient<CriarPedidoHandler>();
 builder.Services.AddTransient<ExcluirPedidoHandler>();
 builder.Services.AddTransient<ObterPedidoHandler>();
 builder.Services.AddTransient<AlterarPedidoHandler>();
+builder.Services.AddTransient<AlterarStatusHandler>();
 
 var app = builder.Build();
 

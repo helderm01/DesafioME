@@ -1,6 +1,8 @@
-﻿namespace Desafio.ME.Dominio.Enum
+﻿using System.Text.Json.Serialization;
+
+namespace Desafio.ME.Dominio.Enum
 {
-    [Flags]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PedidoStatus
     {
         APROVADO,
