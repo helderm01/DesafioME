@@ -13,16 +13,6 @@ namespace Desafio.ME.Database.Repositorios
             Context = context;
         }
 
-        public void BeginTransaction()
-        {
-            Context.Database.BeginTransaction();
-        }
-
-        public void CommitTransaction()
-        {
-            Context.Database.CommitTransaction();
-        }
-
         public bool Any(int id)
         {
             return Context.Set<T>().Any(x => x.Id == id);
@@ -47,12 +37,6 @@ namespace Desafio.ME.Database.Repositorios
         public void Update(T entidade)
         {
             Context.Set<T>().Update(entidade);
-            Context.SaveChanges();
-        }
-
-        public void Update(params T[] entidades)
-        {
-            Context.Set<T>().UpdateRange(entidades);
             Context.SaveChanges();
         }
 
