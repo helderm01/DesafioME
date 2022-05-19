@@ -16,7 +16,8 @@ namespace Desafio.ME.Database.Map
                 .IsRequired();
 
             builder.HasMany(c => c.ItensDoPedido)
-                .WithOne();
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Navigation(c => c.ItensDoPedido)
                 .UsePropertyAccessMode(PropertyAccessMode.Property);

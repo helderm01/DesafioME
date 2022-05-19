@@ -12,12 +12,18 @@ namespace Desafio.ME.API.Controllers
         private readonly CriarPedidoHandler _criarPedidoHandler;
         private readonly ExcluirPedidoHandler _excluirPedidoHandler;
         private readonly ObterPedidoHandler _obterPedidoHandler;
+        private readonly AlterarPedidoHandler _alterarPedidoHandler;
 
-        public PedidoController(CriarPedidoHandler criarPedidoHandler, ExcluirPedidoHandler excluirPedidoHandler, ObterPedidoHandler obterPedidoHandler)
+        public PedidoController(
+            CriarPedidoHandler criarPedidoHandler,
+            ExcluirPedidoHandler excluirPedidoHandler,
+            ObterPedidoHandler obterPedidoHandler,
+            AlterarPedidoHandler alterarPedidoHandler)
         {
             _criarPedidoHandler = criarPedidoHandler;
             _excluirPedidoHandler = excluirPedidoHandler;
             _obterPedidoHandler = obterPedidoHandler;
+            _alterarPedidoHandler = alterarPedidoHandler;
         }
 
         [Route("{pedido}")]
@@ -56,6 +62,25 @@ namespace Desafio.ME.API.Controllers
             try
             {
                 _excluirPedidoHandler.Handle(pedido);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ErroDto.Para(ex));
+            }
+        }
+
+        [HttpPut]
+        [Route("{pedido}")]
+        public IActionResult AlterarPedido(string pedido, AlterarPedidoDto alterarPedido)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ErroDto.Para(ModelState));
+
+            try
+            {
+                _alterarPedidoHandler.Handle(pedido, alterarPedido);
+
                 return Ok();
             }
             catch (Exception ex)

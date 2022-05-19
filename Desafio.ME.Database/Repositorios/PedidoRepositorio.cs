@@ -1,6 +1,7 @@
 ﻿using Desafio.ME.Database.Context;
 using Desafio.ME.Database.Interfaces;
 using Desafio.ME.Dominio;
+using Microsoft.EntityFrameworkCore;
 
 namespace Desafio.ME.Database.Repositorios
 {
@@ -12,6 +13,6 @@ namespace Desafio.ME.Database.Repositorios
         }
 
         public Pedido ObterPorNumero(string numero)
-            => Context.Pedidos.SingleOrDefault(c => c.NumeroPedido == numero);
+            => Context.Pedidos.Include(c=>c.ItensDoPedido).SingleOrDefault(c => c.NumeroPedido == numero);
     }
 }

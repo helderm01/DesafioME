@@ -21,6 +21,7 @@ builder.Services.AddTransient<IPedidoRepositorio, PedidoRepositorio>();
 builder.Services.AddTransient<CriarPedidoHandler>();
 builder.Services.AddTransient<ExcluirPedidoHandler>();
 builder.Services.AddTransient<ObterPedidoHandler>();
+builder.Services.AddTransient<AlterarPedidoHandler>();
 
 var app = builder.Build();
 
